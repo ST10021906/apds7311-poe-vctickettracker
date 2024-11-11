@@ -11,7 +11,7 @@ jobs:
   backend:
     executor: node/default
     
-    working_directory: ~/apds7311-poe-vctickettracker/APDSPEO/secure-login-portal
+    working_directory: ~/APDSPEO/secure-login-portal
     steps:      
       - run: npm install
       - run: npm run build --if-present
