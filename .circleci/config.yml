@@ -9,17 +9,18 @@ orbs:
 
 jobs:
   backend:
-    executor: node/default
-    
-    working_directory: ~/APDSPEO/secure-login-portal
+    machine: # executor type
+      image: ubuntu-2004:current
+    working_directory: ./APDSPEO/secure-login-portal
     steps:      
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
   
   frontend:
-    executor: node/default
-    working_directory: ~/apds7311-poe-vctickettracker/APDSPEO/secure-login-frontend
+    machine: # executor type
+      image: ubuntu-2004:current
+    working_directory: ./APDSPEO/secure-login-frontend
     steps:  
       - run: npm install
       - run: npm run build --if-present
