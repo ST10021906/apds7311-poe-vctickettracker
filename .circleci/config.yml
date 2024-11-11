@@ -11,21 +11,22 @@ jobs:
   backend:
     executor: node/default
     
-    steps:
+    working_directory: ./APDSPEO/secure-login-portal
+    steps:      
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
+  
   frontend:
     executor: node/default
+    working_directory: ./APDSPEO/secure-login-frontend
     steps:  
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
       
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  sample: 
     jobs:
       - frontend
       - backend
-
